@@ -39,22 +39,26 @@ exports.run = async (client, message, args) => {
     const image2 = await loadImage(join(__dirname, `../cards/${getRandomImageFile()}`));
     const image3 = await loadImage(join(__dirname, `../cards/${getRandomImageFile()}`));
 
-    const canvas = await createCanvas(1008, 524);
+    const canvas = createCanvas(1008, 524);
     const context = canvas.getContext('2d');
 
-    context.drawImage(image1, 0, 10, 130, 180);
-    context.drawImage(image2, 135, 10, 130, 180);
-    context.drawImage(image3, 270, 10, 130, 180);
+    context.drawImage(image1, 10, 10, 320, 455);
+    context.drawImage(image2, 349, 10, 320, 455);
+    context.drawImage(image3, 688, 10, 320, 455);
 
     const pngFile = await canvas.encode('png');
-      const attachment = new AttachmentBuilder(pngFile, 'modified_image.jpg');
-      message.channel.send({
-        content: '',
-        files: [attachment]
-      }).catch((e) => {
+    const attachment = new AttachmentBuilder(pngFile, 'modified_image.jpg');
+    message.channel.send({
+        content: `${message.author} dropped some shit fr!😆😂 ||jk||`,
+        files: [attachment],
+    }).then(async (sentMessage) => {
+        await sentMessage.react('1️⃣');
+        await sentMessage.react('2️⃣');
+        await sentMessage.react('3️⃣');
+    }).catch((e) => {
         console.error(e);
         return;
-      })
+    })
 
 }
 
