@@ -1,6 +1,9 @@
 {
   "dependencies": {
-    "discord.js": "^14.11.0"
+    "@napi-rs/canvas": "^0.1.41",
+    "discord.js": "^14.11.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
   },
   "name": "card-drop-game-design",
   "description": "A design for a prefix-based discord bot having card drop feature.",
