@@ -52,18 +52,21 @@ try {
         client.on(eventName, event.bind(null, client));
     }
 
-    const commands = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-    for (const file of commands) {
-        const commandName = file.split('.')[0];
-        const command = require(`./commands/${file}`);
-        if (command.aliases) {
-            command.aliases.forEach(alias => {
-                client.commands.set(alias, command);
-            });
-            console.log(`Loaded ${commandName} with aliases: ${command.aliases}`);
+    const commandsFolder = fs.readdirSync('./commands');
+    for (const folder of commandsFolder) {
+        const commands = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
+        for (const file of commands) {
+            const commandName = file.split('.')[0];
+            const command = require(`./commands/${folder}/${file}`);
+            if (command.aliases) {
+                command.aliases.forEach(alias => {
+                    client.commands.set(alias, command);
+                });
+                console.log(`Loaded ${commandName} with aliases: ${command.aliases}`);
+            }
+            client.commands.set(commandName, command);
+            if (!command.aliases) console.log(`Loaded ${commandName} with no aliases`)
         }
-        client.commands.set(commandName, command);
-        if (!command.aliases) console.log(`Loaded ${commandName} with no aliases`)
     }
 } catch (error) {
     process.stderr.write(error);
