@@ -1,6 +1,6 @@
 const config = require('../config.json');
 const { Deta } = require('deta');
-const deta = Deta(config.detaBaseKey);
+const deta = Deta(config.detaSpaceKey);
 const db = deta.Base('cards');
 const cardSchema = {
     version: 1,
@@ -18,7 +18,7 @@ async function addCard(card) {
 
 
 exports.run = (client, message, args) => {
-    
+
 }
 
 exports.name = 'addCharacter';

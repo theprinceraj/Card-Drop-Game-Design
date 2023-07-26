@@ -1,19 +1,9 @@
 const config = require('../config.json');
-const { Deta } = require('deta');
-const deta = Deta(config.detaBaseKey);
-const db = deta.Base('cards');
-const cardSchema = {
-    version: 1,
-    characterName: String,
-    seriesName: String,
-    wishlistCount: Number,
-    imageUrl: String,
-    cardsIncirculation: Number,
-};
 
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
+    const searchTerm = args.join(' ');
     const characterName = args.join(' ');
-    const seriesName = 'Naruto Uzumaki'; // to be fetched from database
+    const seriesName = ''; // to be fetched from database
     const characterImageURL = 'https://i.ibb.co/K6gbTnn/card-example-1.png'; // to be fetched from database
     const wishlistCount = 696969; // to be fetched from database
     const cardsInCirculation = 69; // to be fetched from database

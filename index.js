@@ -13,10 +13,6 @@ const fs = require('fs')
 const path = require('node:path');
 const config = require('./config.json');
 
-const { Deta } = require('deta');
-const deta = Deta(config.detaSpaceKey);
-const db = deta.Base('cards');
-
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
