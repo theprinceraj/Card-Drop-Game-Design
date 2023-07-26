@@ -2958,3 +2958,5 @@ node_modules/util/node_modules/inherits/package.json
 node_modules/util/node_modules/inherits/README.md
 node_modules/util/support/isBuffer.js
 node_modules/util/support/isBufferBrowser.js
+config.json
+config.json
