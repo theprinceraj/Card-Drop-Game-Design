@@ -1,3 +1,16 @@
+const config = require('../config.json');
+const { Deta } = require('deta');
+const deta = Deta(config.detaBaseKey);
+const db = deta.Base('cards');
+const cardSchema = {
+    version: 1,
+    characterName: String,
+    seriesName: String,
+    wishlistCount: Number,
+    imageUrl: String,
+    cardsIncirculation: Number,
+};
+
 exports.run = (client, message, args) => {
     const characterName = args.join(' ');
     const seriesName = 'Naruto Uzumaki'; // to be fetched from database
