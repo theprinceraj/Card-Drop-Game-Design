@@ -23,3 +23,9 @@ Require stack:
 
 
 [2023-07-26T08:10:19.469Z] Error: Error: Project key is not defined
+
+
+[2023-07-26T17:51:52.766Z] Error: ReferenceError: PROJECT_ID is not defined
+
+
+[2023-07-27T13:15:13.793Z] Error: SyntaxError: Unexpected token '}'

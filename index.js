@@ -15,11 +15,10 @@ const config = require('./config.json');
 
 const client = new Client({
     intents: [
-        IntentsBitField.Flags.Guilds,
-        IntentsBitField.Flags.GuildMembers,
-        IntentsBitField.Flags.GuildMessages,
-        IntentsBitField.Flags.MessageContent,
         GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent
     ]
 });
 
@@ -35,7 +34,7 @@ client.on('ready', () => {
     console.log(`${client.user.tag} is serving in ${client.guilds.cache.size} servers! 🚀`)
     client.user.setPresence({
         activities: [{
-            name: 'Bhaalu',
+            name: '0',
             type: ActivityType.Competing,
         }]
     })
