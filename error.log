@@ -29,3 +29,9 @@ Require stack:
 
 
 [2023-07-27T13:15:13.793Z] Error: SyntaxError: Unexpected token '}'
+
+
+[2023-07-30T06:00:16.967Z] Error: Error: Cannot find module 'axios'
+Require stack:
+- C:\Users\Lenovo\VS Code Projects\Card-Drop-Game-Design\commands\admin\addCharacter.js
+- C:\Users\Lenovo\VS Code Projects\Card-Drop-Game-Design\index.js
