@@ -1,10 +1,3 @@
-/* 
-u dont have to use this since u already attaching config with client
-
-just use const {config} = client;
-
-const config = require('../../config.json');
-*/
 const axios = require('axios');
 const { EmbedBuilder } = require('discord.js');
 
